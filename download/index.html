@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل برنامج StudiFace - الإصدار 2.0.0</title>
+
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        tech: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#050507',
+                            900: '#0A0A0E',
+                            800: '#121218',
+                            700: '#1C1C24',
+                            600: '#2A2A35',
+                        },
+                        brand: {
+                            cyan: '#00E5FF',
+                            blue: '#3B82F6',
+                            green: '#10B981',
+                            red: '#EF4444',
+                            orange: '#F59E0B',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2300E5FF' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                        'radial-glow': 'radial-gradient(circle at 50% 30%, rgba(0, 229, 255, 0.1) 0%, transparent 60%)',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 40px -5px rgba(0, 229, 255, 0.4)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(28, 28, 36, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-950 text-gray-300 font-sans antialiased relative min-h-screen flex flex-col">
+
+    <!-- خلفية وتأثيرات -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <div class="fixed inset-0 bg-radial-glow pointer-events-none z-0"></div>
+
+    <!-- الشريط العلوي -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="../resources/logo.png" alt="StudiFace" class="h-8 md:h-10 w-auto object-contain relative z-10"
+                    onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
+                <h1 class="text-xl md:text-2xl font-black text-white tracking-wide">
+                    StudiFace <span class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Vision
+                        AI</span>
+                </h1>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html"
+                    class="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> العودة للرئيسية
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي (صفحة التحميل) -->
+    <main class="flex-grow relative z-10 pt-32 pb-20 flex flex-col items-center justify-center">
+
+        <div class="w-full max-w-4xl mx-auto px-6">
+
+            <!-- الترويسة -->
+            <div class="text-center mb-10">
+                <h1 class="text-4xl lg:text-5xl font-black text-white mb-4">ملف التحميل جاهز</h1>
+                <p class="text-lg text-gray-400">ابدأ في أرشفة استوديوك بذكاء. النسخة المجانية تتيح لك تجربة البرنامج
+                    فوراً.</p>
+            </div>
+
+            <!-- بطاقة التحميل الرئيسية -->
+            <div
+                class="glass-panel rounded-3xl p-8 lg:p-12 border-2 border-brand-cyan/30 shadow-neon-cyan relative overflow-hidden animate-float text-center">
+
+                <!-- تأثير إضاءة داخل البطاقة -->
+                <div
+                    class="absolute -top-20 -right-20 w-40 h-40 bg-brand-cyan/20 blur-3xl rounded-full pointer-events-none">
+                </div>
+                <!-- الشعار المتحرك والإصدار -->
+                <div class="flex flex-col items-center justify-center mb-8">
+                    <!-- حاوية الشعار المتحرك -->
+                    <div
+                        class="w-24 h-24 bg-dark-950 border border-dark-600 rounded-2xl flex items-center justify-center mb-4 shadow-2xl overflow-hidden p-2 group-hover:border-brand-cyan/50 transition-colors">
+                        <img src="../resources/logo.png" alt="StudiFace Animation"
+                            class="w-full h-full object-contain drop-shadow-[0_0_10px_rgba(0,229,255,0.3)]"
+                            onerror="this.src='https://placehold.co/80x80/0A0A0E/00E5FF?text=AI'">
+                    </div>
+
+                    <h2 class="text-3xl font-black text-white">StudiFace Windows</h2>
+
+                    <!-- شارة الإصدار -->
+                    <div
+                        class="inline-flex items-center gap-2 mt-2 bg-dark-800 px-4 py-1 rounded-full border border-dark-600">
+                        <span class="text-brand-green flex h-2 w-2 relative">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
+                        </span>
+                        <span class="text-sm font-tech text-gray-300">Version 2.0.0 (Latest)</span>
+                    </div>
+                </div>
+                <!-- معلومات تقنية -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 text-center">
+                    <div class="bg-dark-900/50 p-3 rounded-xl border border-dark-700">
+                        <i class="fa-brands fa-windows text-gray-500 mb-1 text-lg"></i>
+                        <div class="text-xs text-gray-400">النظام المتوافق</div>
+                        <div class="text-sm font-bold text-white font-tech">Windows 10/11</div>
+                    </div>
+                    <div class="bg-dark-900/50 p-3 rounded-xl border border-dark-700">
+                        <i class="fa-solid fa-microchip text-gray-500 mb-1 text-lg"></i>
+                        <div class="text-xs text-gray-400">المعمارية</div>
+                        <div class="text-sm font-bold text-white font-tech">64-bit</div>
+                    </div>
+                    <div class="bg-dark-900/50 p-3 rounded-xl border border-dark-700">
+                        <i class="fa-solid fa-file-zipper text-gray-500 mb-1 text-lg"></i>
+                        <div class="text-xs text-gray-400">نوع الملف</div>
+                        <div class="text-sm font-bold text-white font-tech">EXE</div>
+                    </div>
+                    <div class="bg-dark-900/50 p-3 rounded-xl border border-dark-700">
+                        <i class="fa-solid fa-hard-drive text-gray-500 mb-1 text-lg"></i>
+                        <div class="text-xs text-gray-400">الترخيص</div>
+                        <div class="text-sm font-bold text-brand-green font-tech">مجانـي للتجربة</div>
+                    </div>
+                </div>
+
+                <!-- زر التحميل -->
+                <!-- ملاحظة: ضع رابط التحميل الفعلي بدلاً من "#" في href -->
+                <a href="#" download
+                    class="group relative inline-flex items-center justify-center w-full md:w-auto px-12 py-5 font-black text-xl text-dark-950 bg-gradient-to-r from-brand-cyan to-brand-blue rounded-2xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_30px_rgba(0,229,255,0.3)]">
+                    <span
+                        class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-full group-hover:h-56 opacity-10"></span>
+                    <i class="fa-solid fa-download mr-3 group-hover:animate-bounce"></i>
+                    تحميل البرنامج الآن
+                </a>
+
+                <p class="text-xs text-gray-500 mt-4"><i class="fa-solid fa-shield-check"></i> تم فحصه وخالٍ تماماً من
+                    الفيروسات</p>
+            </div>
+
+            <!-- إشارات الثقة (Trust Badges) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div class="glass-panel p-5 rounded-2xl border border-dark-700 text-center flex flex-col items-center">
+                    <div
+                        class="w-12 h-12 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-1">يعمل بدون إنترنت</h3>
+                    <p class="text-xs text-gray-400">لن نطلب منك الاتصال بالإنترنت، خصوصية استوديوك محمية 100%.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-dark-700 text-center flex flex-col items-center">
+                    <div
+                        class="w-12 h-12 rounded-full bg-brand-orange/10 text-brand-orange flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-1">لا يتطلب بطاقة ائتمانية</h3>
+                    <p class="text-xs text-gray-400">حمل وثبت وجرب على أرشيفك فوراً دون إدخال أي بيانات بنكية.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-dark-700 text-center flex flex-col items-center">
+                    <div
+                        class="w-12 h-12 rounded-full bg-brand-purple/10 text-brand-purple flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-white font-bold mb-1">تثبيت ذكي وتلقائي</h3>
+                    <p class="text-xs text-gray-400">يقوم البرنامج بتهيئة محرك الذكاء الاصطناعي ذاتياً ليعمل بأفضل أداء
+                        يتناسب مع
+                        مواصفات حاسوبك.</p>
+                </div>
+            </div>
+
+            <!-- خطوات ما بعد التحميل -->
+            <!-- خطوات ما بعد التحميل (تحديث للملف التنفيذي EXE) -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-black text-white mb-8 border-b border-dark-700 pb-4 inline-block">ماذا تفعل بعد
+                    التحميل؟
+                </h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+                    <!-- الخطوة 1 -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-dark-800 text-brand-cyan border border-dark-600 flex items-center justify-center font-bold">
+                            1</div>
+                        <span class="text-gray-300">حمل ملف التثبيت EXE</span>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-left text-dark-600 hidden md:block"></i>
+                    <i class="fa-solid fa-arrow-down text-dark-600 md:hidden"></i>
+
+                    <!-- الخطوة 2 -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 rounded-full bg-dark-800 text-brand-cyan border border-dark-600 flex items-center justify-center font-bold">
+                            2</div>
+                        <span class="text-gray-300">شغل ملف الـ Setup</span>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-left text-dark-600 hidden md:block"></i>
+                    <i class="fa-solid fa-arrow-down text-dark-600 md:hidden"></i>
+
+                    <!-- الخطوة 3 (رابط تفاعلي لصفحة كيف يعمل) -->
+                    <a href="how-it-works.html"
+                        class="flex items-center gap-3 group/step transition-all hover:translate-x-[-5px]">
+                        <div
+                            class="w-8 h-8 rounded-full bg-brand-cyan text-dark-950 shadow-neon-cyan flex items-center justify-center font-bold group-hover/step:scale-110 transition-transform">
+                            3</div>
+                        <div class="text-right">
+                            <span class="text-white font-bold block">اتبع دليل التشغيل</span>
+                            <span
+                                class="text-brand-cyan text-[10px] flex items-center gap-1 group-hover/step:underline">
+                                شاهد شرح الواجهة <i class="fa-solid fa-arrow-left text-[8px]"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- الفوتر المختصر -->
+    <footer class="bg-dark-950 border-t border-dark-700 py-6 relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة غير موجودة | StudiFace</title>
+
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        tech: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#050507',
+                            900: '#0A0A0E',
+                            800: '#121218',
+                            700: '#1C1C24',
+                            600: '#2A2A35',
+                        },
+                        brand: {
+                            cyan: '#00E5FF',
+                            blue: '#3B82F6',
+                            green: '#10B981',
+                            red: '#EF4444',
+                            orange: '#F59E0B',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2300E5FF' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                        'radial-glow': 'radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 60%)',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 40px -5px rgba(0, 229, 255, 0.4)',
+                        'neon-red': '0 0 40px -5px rgba(239, 68, 68, 0.4)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(28, 28, 36, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-950 text-gray-300 font-sans antialiased relative min-h-screen flex flex-col overflow-hidden">
+
+    <!-- خلفية وتأثيرات -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-50"></div>
+    <div class="fixed inset-0 bg-radial-glow pointer-events-none z-0"></div>
+
+    <!-- الشريط العلوي المصغر -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="../resources/logo.png" alt="StudiFace" class="h-8 md:h-10 w-auto object-contain relative z-10"
+                    onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
+                <h1 class="text-xl md:text-2xl font-black text-white tracking-wide">
+                    StudiFace <span class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Vision
+                        AI</span>
+                </h1>
+            </a>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي (الخطأ 404) -->
+    <main class="flex-grow relative z-10 flex flex-col items-center justify-center px-6 text-center">
+
+        <!-- حاوية الصورة المتحركة -->
+        <div class="relative animate-float mt-12 mb-10 group">
+
+            <!-- توهج أحمر/وردي خلف الصورة يتناسب مع ألوانها -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 md:w-64 h-48 md:h-64 bg-brand-red/20 blur-[60px] rounded-full pointer-events-none z-0 transition-all group-hover:bg-brand-red/30">
+            </div>
+
+            <!-- صورة الخطأ الخاصة بالبرنامج (logo2.png) -->
+            <img src="../resources/logo2.png" alt="لم يتم العثور على نتيجة"
+                class="relative z-10 w-48 md:w-64 h-auto drop-shadow-[0_0_25px_rgba(239,68,68,0.3)]">
+
+            <!-- شارة 404 -->
+            <div
+                class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-dark-950 border-2 border-brand-red/50 text-white px-6 py-1.5 rounded-full font-tech font-black text-xl shadow-neon-red whitespace-nowrap z-20">
+                404
+            </div>
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4 mt-2">عذراً، لم يتمكن المحرك من إيجاد هذه الصفحة!
+        </h2>
+
+        <p class="text-gray-400 max-w-lg mx-auto text-lg mb-10 leading-relaxed">
+            يبدو أن الرابط الذي اتبعته غير صحيح، أو أن الصفحة قد تم نقلها. لا تقلق، لم تفقد أرشيفك، لقد فقدت مسارك في
+            الموقع
+            فقط. دعنا نوجهك للرئيسية.
+        </p>
+
+        <!-- الأزرار -->
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto">
+            <a href="index.html"
+                class="w-full sm:w-auto bg-gradient-to-r from-brand-cyan to-brand-blue text-dark-950 px-8 py-4 rounded-xl font-black transition-transform hover:scale-105 shadow-neon-cyan flex items-center justify-center gap-2">
+                <i class="fa-solid fa-house"></i> العودة للرئيسية
+            </a>
+
+            <a href="contact.html"
+                class="w-full sm:w-auto glass-panel text-white border border-dark-600 hover:border-brand-cyan px-8 py-4 rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                <i class="fa-solid fa-headset"></i> طلب المساعدة
+            </a>
+        </div>
+
+    </main>
+
+    <!-- الفوتر المختصر -->
+    <footer class="bg-dark-950 border-t border-dark-700 py-6 relative z-10 mt-auto w-full">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

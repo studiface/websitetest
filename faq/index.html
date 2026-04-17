@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة | مركز مساعدة StudiFace</title>
+
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        tech: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#050507',
+                            900: '#0A0A0E',
+                            800: '#121218',
+                            700: '#1C1C24',
+                            600: '#2A2A35',
+                        },
+                        brand: {
+                            cyan: '#00E5FF',
+                            blue: '#3B82F6',
+                            green: '#10B981',
+                            red: '#EF4444',
+                            orange: '#F59E0B',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2300E5FF' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                        'radial-glow': 'radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.15) 0%, transparent 70%)',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 40px -5px rgba(0, 229, 255, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(28, 28, 36, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #00E5FF 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* تخصيص الأكورديون (الأسئلة) */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* تدوير السهم عند الفتح */
+        details[open] summary i.fa-chevron-down {
+            transform: rotate(180deg);
+            color: #00E5FF;
+        }
+
+        /* إضاءة الإطار عند الفتح */
+        details[open] {
+            border-color: rgba(0, 229, 255, 0.3);
+            background: rgba(28, 28, 36, 0.9);
+        }
+
+        /* حركة ظهور النص */
+        details[open] summary~* {
+            animation: fadeInDown 0.4s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark-950 text-gray-300 font-sans antialiased relative min-h-screen flex flex-col">
+
+    <!-- خلفية وتأثيرات -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <div class="fixed top-0 inset-x-0 h-[500px] bg-radial-glow pointer-events-none z-0"></div>
+
+    <!-- الشريط العلوي -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="../resources/logo.png" alt="StudiFace" class="h-8 md:h-10 w-auto object-contain relative z-10"
+                    onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
+                <h1 class="text-xl md:text-2xl font-black text-white tracking-wide">
+                    StudiFace <span class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Vision
+                        AI</span>
+                </h1>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html"
+                    class="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> الرئيسية
+                </a>
+                <a href="contact.html"
+                    class="hidden md:flex text-gray-400 hover:text-white transition-colors font-bold text-sm items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> الدعم الفني
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-grow relative z-10 pt-32 pb-20">
+
+        <header class="text-center max-w-3xl mx-auto px-6 mb-16">
+            <span class="text-brand-cyan font-bold tracking-widest text-sm uppercase mb-3 block">Knowledge Base</span>
+            <h1 class="text-4xl lg:text-5xl font-black text-white mb-6">الأسئلة <span
+                    class="text-gradient-cyan">الشائعة</span></h1>
+            <p class="text-xl text-gray-400 leading-relaxed">
+                جمعنا لك الإجابات على أكثر التساؤلات تكراراً من المصورين وأصحاب الاستوديوهات حول أداء محرك StudiFace
+                وكيفية عمله.
+            </p>
+        </header>
+
+        <div class="max-w-4xl mx-auto px-6">
+
+            <!-- ============================== -->
+            <!-- قسم: القدرات التقنية والأداء -->
+            <!-- ============================== -->
+            <h2 class="text-2xl font-black text-white mb-6 flex items-center gap-3 border-b border-dark-700 pb-3">
+                <i class="fa-solid fa-microchip text-brand-cyan"></i> القدرات التقنية والأداء
+            </h2>
+            <div class="space-y-4 mb-12">
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">ما هي المواصفات الأدنى لتشغيل البرنامج
+                            بسلاسة؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        البرنامج مُحسن ليعمل بشكل ممتاز على الأجهزة المتوسطة ببيئة الويندوز. للحصول على أسرع تجربة
+                        مطابقة، ننصح بالتالي:
+                        <ul class="list-disc pr-6 mt-2 space-y-1 text-gray-300">
+                            <li>نظام التشغيل: Windows 10 أو Windows 11 (64-bit).</li>
+                            <li>معالج (CPU): من فئة Core i3 أو ما يعادلها فما فوق.</li>
+                            <li>الذاكرة العشوائية (RAM): يُنصح بـ 8 جيجابايت كحد أدنى.</li>
+                            <li>التخزين: وجود قرص SSD يزيد من سرعة قراءة الصور بشكل هائل.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">هل يتعرف البرنامج على الأشخاص عند كبرهم في
+                            السن؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        نعم، بفضل محرك الذكاء الاصطناعي المتطور، يمكن للبرنامج التعرف على الأشخاص حتى مع تغير الملامح
+                        بمرور السنوات (مثل نمو اللحية، أو تغير تسريحة الشعر، أو التقدم في العمر). كما يمكنك التحكم في
+                        "مستوى التشابه" لتقليل حساسية المطابقة والسماح للبرنامج بإيجاد العميل بدقة أكبر.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">هل أحتاج لإعادة ترتيب مجلداتي المبعثرة ليعمل
+                            البرنامج؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        <strong class="text-brand-cyan block mb-1">إطلاقاً.</strong> البرنامج مصمم للتعامل مع الفوضى. كل
+                        ما عليك فعله هو توجيهه للقرص الصلب (Hard Drive) أو المجلد الرئيسي العشوائي، وسيقوم الذكاء
+                        الاصطناعي باختراق كافة المجلدات الفرعية مهما كان عمقها وقراءة الصور منها دون الحاجة لأي تنظيم
+                        مسبق منك.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">ما هو الحد الأقصى للصور التي يمكن
+                            فهرستها؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        في <strong class="text-white">النسخة المجانية</strong>، يمكنك تجربة النظام على 500 وجه. أما في
+                        <strong class="text-brand-cyan">نسخة PRO الاحترافية</strong>، فالاستيعاب <strong
+                            class="text-white">لا محدود (Unlimited)</strong>. يمكنك إدخال ملايين الصور وتيرابايتات من
+                        البيانات وسيتعامل معها المحرك بكفاءة تامة.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">ماذا يحدث في الصور الجماعية (أفواج التخرج،
+                            العائلات)؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        البرنامج ذكي جداً، فهو لا يقرأ "الصورة" بل يقرأ "الوجوه". إذا احتوت الصورة على 50 شخصاً، سيقوم
+                        النظام باستخراج 50 بصمة وجه منفصلة وفهرستها. وعندما تبحث عن أي شخص منهم لاحقاً، سيستخرج لك تلك
+                        الصورة الجماعية فوراً.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">هل سأضطر لإعادة العملية إذا اشتريت هاردسك جديد
+                            ونقلت الصور إليه؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        <strong class="text-brand-orange block mb-1">لا، عملك لن يضيع.</strong> البرنامج يحتوي على أداة
+                        تسمى "مدير المسارات". بضغطة زر واحدة، تخبر البرنامج بالمكان الجديد للصور، وسيقوم بتحديث مسارات
+                        ملايين الوجوه في ثوانٍ معدودة دون الحاجة لإعادة عملية التعلم البطيئة.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- ============================== -->
+            <!-- قسم: الخصوصية والأمان والتراخيص -->
+            <!-- ============================== -->
+            <h2 class="text-2xl font-black text-white mb-6 flex items-center gap-3 border-b border-dark-700 pb-3 mt-16">
+                <i class="fa-solid fa-shield-halved text-brand-green"></i> الخصوصية والأمان والتوافق
+            </h2>
+            <div class="space-y-4 mb-12">
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">هل يتم رفع صور عملائي للإنترنت (خوادم
+                            خارجية)؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        <strong class="text-brand-green block mb-1">مستحيل. الخصوصية خط أحمر.</strong>
+                        البرنامج مبرمج ليعمل 100% دون اتصال بالإنترنت (Offline). لا يتم رفع أي صورة أو بصمة وجه لأي خادم
+                        سحابي. قاعدة البيانات التي يُنشئها البرنامج تُحفظ كملف مشفر داخل حاسوبك الشخصي وتحت سيطرتك
+                        التامة.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">هل البرنامج آمن من الفيروسات؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        بكل تأكيد. ملف التحميل (Setup) مفحوص تقنياً وخالٍ تماماً من أي برمجيات ضارة. ونظراً لأن طبيعة
+                        البرنامج تعمل دون إنترنت، فهو محصن ضد أي محاولات تسريب للبيانات.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">هل يدعم البرنامج أجهزة الماك (Mac /
+                            Apple)؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        حالياً، المحرك مبرمج للعمل بأقصى كفاءة على أنظمة <strong>Windows 10 و Windows 11
+                            (64-bit)</strong> فقط. تركيزنا على الويندوز يتيح لنا استغلال موارد الجهاز بالكامل لضمان سرعة
+                        البحث الفائقة.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-2xl border border-dark-600 transition-all duration-300">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer outline-none">
+                        <span class="text-white font-bold text-lg pr-4">اشتريت جهاز كمبيوتر جديد، هل يضيع
+                            التفعيل؟</span>
+                        <div class="w-8 h-8 rounded-full bg-dark-800 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform duration-300"></i>
+                        </div>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-dark-700 pt-4">
+                        الرخصة مصممة لترتبط بالمكونات الصلبة للجهاز (Hardware Locked) لمنع القرصنة. ولكن إذا قمت بترقية
+                        جهازك، كل ما عليك فعله هو الدخول للبرنامج في الجهاز القديم والضغط على "إلغاء التفعيل"، ثم
+                        مراسلتنا لنقوم بتنشيط المفتاح لجهازك الجديد مجاناً.
+                    </div>
+                </details>
+            </div>
+
+            <!-- CTA سفلي للتواصل -->
+            <div
+                class="mt-20 bg-dark-900 border border-brand-cyan/20 p-8 lg:p-12 rounded-3xl text-center relative overflow-hidden shadow-neon-cyan">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-cyan/5 to-transparent pointer-events-none">
+                </div>
+                <h3 class="text-2xl font-black text-white mb-4 relative z-10">هل لا يزال لديك سؤال محدد؟</h3>
+                <p class="text-gray-400 mb-8 relative z-10">فريق الدعم والمبيعات لدينا متواجد عبر واتساب للإجابة على
+                    جميع استفساراتك المتعلقة باستوديوك الخاص.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+                    <a href="https://wa.me/212695106101" target="_blank" rel="noopener noreferrer"
+                        class="bg-brand-green hover:bg-emerald-400 text-dark-950 px-8 py-4 rounded-xl font-bold transition-all hover:scale-105 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> تواصل معنا عبر واتساب
+                    </a>
+                    <a href="how-it-works.html"
+                        class="glass-panel text-white hover:border-brand-cyan px-8 py-4 rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-book text-brand-cyan"></i> شاهد دليل الاستخدام
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- الفوتر المختصر -->
+    <footer class="bg-dark-950 border-t border-dark-700 py-8 relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

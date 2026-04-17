@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المركز القانوني | سياسة الخصوصية وشروط الاستخدام - StudiFace</title>
+
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        tech: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#050507',
+                            900: '#0A0A0E',
+                            800: '#121218',
+                            700: '#1C1C24',
+                            600: '#2A2A35',
+                        },
+                        brand: {
+                            cyan: '#00E5FF',
+                            blue: '#3B82F6',
+                            green: '#10B981',
+                            red: '#EF4444',
+                            orange: '#F59E0B',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2300E5FF' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(28, 28, 36, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+
+        /* تصميم مخصص للنصوص القانونية */
+        .legal-content h2 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #2A2A35;
+            padding-bottom: 0.5rem;
+        }
+
+        .legal-content h3 {
+            color: #E5E7EB;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-content p {
+            color: #9CA3AF;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .legal-content ul {
+            list-style-type: disc;
+            padding-right: 1.5rem;
+            color: #9CA3AF;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-content ul li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .legal-content strong {
+            color: #D1D5DB;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-950 text-gray-300 font-sans antialiased relative min-h-screen flex flex-col">
+
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+
+    <!-- الشريط العلوي -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="../resources/logo.png" alt="StudiFace" class="h-8 md:h-10 w-auto object-contain relative z-10"
+                    onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
+                <h1 class="text-xl md:text-2xl font-black text-white tracking-wide">
+                    StudiFace <span class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Vision
+                        AI</span>
+                </h1>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html"
+                    class="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> الرئيسية
+                </a>
+                <a href="contact.html"
+                    class="hidden md:flex text-gray-400 hover:text-white transition-colors font-bold text-sm items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> الدعم الفني
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow relative z-10 pt-32 pb-20">
+
+        <header class="text-center max-w-4xl mx-auto px-6 mb-16">
+            <span class="text-brand-cyan font-bold tracking-widest text-sm uppercase mb-3 block">Legal Center</span>
+            <h1 class="text-4xl lg:text-5xl font-black text-white mb-6">المركز القانوني</h1>
+            <p class="text-lg text-gray-400">آخر تحديث: <span class="font-tech text-white">1 أبريل 2026</span></p>
+        </header>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+            <!-- القائمة الجانبية (للتنقل السريع) -->
+            <aside class="lg:col-span-3">
+                <div class="glass-panel p-6 rounded-2xl sticky top-28 border border-dark-700">
+                    <h3 class="text-white font-bold mb-4 border-b border-dark-600 pb-2">محتويات الصفحة</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#privacy"
+                                class="text-brand-cyan hover:text-white transition-colors block font-bold"><i
+                                    class="fa-solid fa-shield-halved mr-2"></i> سياسة الخصوصية</a></li>
+                        <ul class="pr-6 space-y-2 text-gray-400 text-xs border-r border-dark-700 pt-2">
+                            <li><a href="#privacy-offline" class="hover:text-brand-cyan transition-colors block">1.
+                                    التشغيل المحلي (Offline)</a></li>
+                            <li><a href="#privacy-data" class="hover:text-brand-cyan transition-colors block">2.
+                                    البيانات التي نجمعها</a></li>
+                            <li><a href="#privacy-payments" class="hover:text-brand-cyan transition-colors block">3.
+                                    المدفوعات والبيانات المالية</a></li>
+                        </ul>
+                        <li class="pt-2"><a href="#terms"
+                                class="text-brand-orange hover:text-white transition-colors block font-bold"><i
+                                    class="fa-solid fa-file-contract mr-2"></i> شروط الاستخدام</a></li>
+                        <ul class="pr-6 space-y-2 text-gray-400 text-xs border-r border-dark-700 pt-2">
+                            <li><a href="#terms-license" class="hover:text-brand-orange transition-colors block">1.
+                                    الترخيص والملكية الفكرية</a></li>
+                            <li><a href="#terms-restrictions" class="hover:text-brand-orange transition-colors block">2.
+                                    القيود والمحظورات</a></li>
+                            <li><a href="#terms-liability" class="hover:text-brand-orange transition-colors block">3.
+                                    إخلاء المسؤولية (حماية الأرشيف)</a></li>
+                            <li><a href="#terms-refund" class="hover:text-brand-orange transition-colors block">4. سياسة
+                                    الاسترجاع والضمان</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- المحتوى القانوني -->
+            <div class="lg:col-span-9 glass-panel p-8 lg:p-12 rounded-3xl border border-dark-700 legal-content">
+
+                <!-- مقدمة -->
+                <p class="text-lg text-white font-bold mb-8">مرحباً بك في برنامج StudiFace. تحكم هذه الوثيقة الشروط
+                    والأحكام القانونية لبرنامجنا وموقعنا الإلكتروني. باستخدامك للبرنامج، فإنك توافق التزاماً كاملاً بما
+                    ورد في هذه الاتفاقية.</p>
+
+                <!-- ============================== -->
+                <!-- قسم سياسة الخصوصية -->
+                <!-- ============================== -->
+                <div id="privacy" class="mt-4">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-brand-cyan/10 p-3 rounded-lg"><i
+                                class="fa-solid fa-shield-halved text-2xl text-brand-cyan"></i></div>
+                        <h1 class="text-3xl font-black text-white m-0 border-none p-0">سياسة الخصوصية</h1>
+                    </div>
+
+                    <h2 id="privacy-offline">1. التشغيل المحلي التام والسرية المطلقة (Offline Only)</h2>
+                    <div class="bg-brand-green/10 border border-brand-green/30 rounded-xl p-5 mb-6">
+                        <p class="text-brand-green font-bold text-lg mb-2 m-0"><i class="fa-solid fa-lock mr-2"></i>
+                            ضمان الخصوصية التامة لصور العملاء</p>
+                        <p class="text-gray-300 m-0 text-sm leading-relaxed">تمت برمجة StudiFace ليعمل كلياً كبرنامج سطح
+                            مكتب (Desktop Application) مستقل. <strong>نحن لا نقوم بجمع، أو رفع، أو تخزين، أو تحليل أي
+                                صور، أو بصمات وجوه، أو بيانات أرشيفية تخص عملائك على أي خوادم سحابية (Cloud Servers)
+                                إطلاقاً.</strong> جميع عمليات الذكاء الاصطناعي والمطابقة تتم داخلياً على قرصك الصلب
+                            (Hard Drive)، وتبقى تحت سيطرتك ومسؤوليتك الكاملة بنسبة 100%.</p>
+                    </div>
+
+                    <h2 id="privacy-data">2. ما هي البيانات التي نجمعها؟</h2>
+                    <p>نظراً لأن البرنامج يعمل بدون إنترنت، فإن البيانات الوحيدة التي نقوم بجمعها هي تلك التي تقدمها لنا
+                        طواعية لأغراض الترخيص والدعم الفني عبر الموقع أو الواتساب، وتشمل:</p>
+                    <ul>
+                        <li><strong>بيانات التواصل:</strong> الاسم، اسم الاستوديو الخاص بك، البريد الإلكتروني، ورقم
+                            الواتساب.</li>
+                        <li><strong>بيانات الترخيص (License Data):</strong> عند طلب التفعيل، يقوم البرنامج بتوليد "مُعرف
+                            جهاز" فريد (Hardware ID) مشفر بناءً على مكونات حاسوبك (مثل المعالج واللوحة الأم). هذا الرقم
+                            لا يحتوي على أي معلومات شخصية، ويُستخدم حصراً لإنشاء مفتاح التفعيل (License Key) الخاص
+                            بجهازك لمنع القرصنة.</li>
+                    </ul>
+
+                    <h2 id="privacy-payments">3. المدفوعات والبيانات المالية</h2>
+                    <p>لحماية أمانك المالي، <strong>نحن لا نطلب ولا نخزن أي تفاصيل لبطاقات الائتمان (Credit Cards) على
+                            موقعنا الإلكتروني.</strong> تتم جميع عمليات شراء النسخة الاحترافية (PRO) بطرق يدوية وآمنة
+                        عبر التواصل المباشر (مثل التحويل البنكي، أو بوابات الدفع المحلية المعتمدة التي نرسلها لك عبر
+                        واتساب). بياناتك المالية تتم معالجتها عبر البنوك والجهات المختصة التابعة لك.</p>
+
+                    <h2>4. مشاركة البيانات والإفصاح</h2>
+                    <p>نحن نحترم خصوصية أعمالك. لا نقوم ببيع، أو تأجير، أو مشاركة بيانات الترخيص أو التواصل الخاصة بك مع
+                        أي طرف ثالث لأغراض تسويقية. يقتصر استخدام معلوماتك على الدعم الفني وإدارة ترخيصك فقط.</p>
+                </div>
+
+                <hr class="border-dark-700 my-16">
+
+                <!-- ============================== -->
+                <!-- قسم شروط الاستخدام -->
+                <!-- ============================== -->
+                <div id="terms">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-brand-orange/10 p-3 rounded-lg"><i
+                                class="fa-solid fa-file-contract text-2xl text-brand-orange"></i></div>
+                        <h1 class="text-3xl font-black text-white m-0 border-none p-0">شروط الاستخدام (EULA)</h1>
+                    </div>
+
+                    <h2 id="terms-license">1. طبيعة الترخيص والملكية الفكرية</h2>
+                    <p>يتم منحك ترخيصاً محدوداً، غير حصري، وغير قابل للتحويل لاستخدام محرك <strong>StudiFace</strong>.
+                        يُباع البرنامج كترخيص
+                        استخدام، وليس كملكية. تحتفظ الجهة المطورة بالملكية الحصرية والمطلقة لـ "المعمار البرمجي
+                        المتكامل"، والذي يشمل
+                        خوارزميات الفهرسة فائقة السرعة، هندسة قواعد البيانات المحلية، والمنطق البرمجي السري (Business
+                        Logic) الذي يربط
+                        النظام ببعضه. وضمن هذا البناء التقني المعقد، يوظف المحرك بعض المكتبات الرياضية والنماذج البرمجية
+                        القياسية (مفتوحة
+                        المصدر) المصرح باستخدامها تجارياً كجزء من أساسيات التعرف، والتي تخضع لتراخيصها الأصلية دون أن
+                        ينتقص ذلك من حقوق
+                        ملكيتنا الحصرية للمنتج النهائي ككل. رخصة النسخة الاحترافية (PRO) ترتبط بجهاز كمبيوتر واحد فقط
+                        (Hardware Locked).</p>
+
+                    <h2 id="terms-restrictions">2. القيود والمحظورات الصارمة</h2>
+                    <p>يُحظر عليك صراحةً القيام بأي من الإجراءات التالية. إن أي محاولة لخرق هذه البنود تُسقط فوراً
+                        الصلاحية القانونية
+                        الممنوحة لك لاستخدام البرنامج دون أي حق في التعويض، وتضع المستخدم تحت طائلة المسؤولية، وتؤدي إلى
+                        حرمانك من كافة
+                        الامتيازات والخدمات المذكورة في البند الخامس أدناه:</p>
+                    <ul>
+                        <li><strong>الهندسة العكسية:</strong> محاولة فك تشفير، أو تفكيك (Decompile)، أو إجراء هندسة
+                            عكسية لمحرك البرنامج أو
+                            خوارزميات الذكاء الاصطناعي.</li>
+                        <li><strong>القرصنة:</strong> محاولة تجاوز نظام الترخيص المحلي، أو إنشاء أدوات تفعيل وهمية
+                            (Keygens/Cracks)، أو
+                            توزيع البرنامج بشكل غير قانوني.</li>
+                        <li><strong>التأجير أو البيع:</strong> بيع، أو تأجير، أو ترخيص البرنامج من الباطن لأطراف أخرى
+                            (استوديوهات أخرى) غير
+                            المشتري الأصلي.</li>
+                    </ul>
+
+                    <h2 id="terms-liability">3. إخلاء المسؤولية القانونية الشامل</h2>
+                    <div class="bg-dark-800 border-l-4 border-brand-orange p-5 rounded-r-lg mb-6 space-y-4">
+                        <p class="m-0 text-sm text-gray-300 leading-relaxed">
+                            <strong class="text-white block mb-1">أولاً: حماية الأرشيف والبيانات</strong>
+                            البرنامج مصمم كأداة للبحث (أداة مساعدة قراءة فقط). <strong>فريق StudiFace لا يتحمل أي
+                                مسؤولية قانونية أو مادية
+                                عن فقدان، أو تلف، أو حذف الصور من قرصك الصلب.</strong> تقع مسؤولية عمل نسخ احتياطية
+                            (Backups) لأرشيفك على
+                            عاتقك بالكامل.
+                        </p>
+                        <p class="m-0 text-sm text-gray-300 leading-relaxed">
+                            <strong class="text-white block mb-1">ثانياً: دقة الذكاء الاصطناعي (As Is)</strong>
+                            يتم توفير تقنيات الذكاء الاصطناعي والمكونات مفتوحة المصدر المدمجة في البرنامج <strong>"كما
+                                هي" (As Is)</strong>
+                            دون أي ضمانات صريحة أو ضمنية بدقة التعرف بنسبة 100%. نحن لا نتحمل أي مسؤولية قانونية أو
+                            تجارية تنتج عن أخطاء
+                            المطابقة (تطابق خاطئ أو فشل في التعرف)، أو أي ضرر ناتج عن اعتمادك على نتائج الخوارزمية.
+                        </p>
+                    </div>
+
+                    <h2 id="terms-refund">4. سياسة الاسترجاع (Refund Policy)</h2>
+                    <p>نظراً لطبيعة المنتجات الرقمية (Software)، وبما أننا نوفر <strong>نسخة تجريبية مجانية
+                            بالكامل</strong> تتيح لك اختبار البرنامج على 500 وجه لمعرفة مدى كفاءته وتوافقه مع حاسوبك،
+                        فإننا نطبق السياسة التالية:</p>
+                    <ul>
+                        <li>بمجرد إتمام عملية الدفع وتوليد <strong>مفتاح التفعيل (License Key)</strong> الخاص بجهازك
+                            وإرساله لك، <strong>لا يمكن المطالبة باسترداد الأموال</strong> تحت أي ظرف.</li>
+                        <li>يُقر المستخدم أن مسؤوليته هي تجربة النسخة المجانية والتأكد من مطابقة البرنامج لاحتياجاته قبل
+                            اتخاذ قرار الشراء.</li>
+                    </ul>
+
+                    <h2>5. إنهاء الخدمة والعقوبات القانونية</h2>
+                    <p>التزاماً منا بالسرية المطلقة لبياناتك، فإن البرنامج لا يتصل بخوادمنا ولا يحتوي على أي "أداة إيقاف
+                        عن بُعد" (Kill
+                        Switch). ومع ذلك، في حال ثبوت انتهاك المستخدم لأي من بنود هذه الاتفاقية (مثل القرصنة أو التوزيع
+                        غير القانوني)، فإننا
+                        نحتفظ بالحق <strong>القانوني</strong> في الإلغاء الفوري للترخيص. ويترتب على ذلك العقوبات
+                        التالية:</p>
+                    <ul>
+                        <li>الحرمان النهائي والمطلق من أي تحديثات أو إصدارات مستقبلية للبرنامج.</li>
+                        <li>الإيقاف الفوري لخدمات الدعم الفني والمساعدة.</li>
+                        <li>الرفض القاطع لتوليد أي مفاتيح تفعيل جديدة في حال تغيير المستخدم لجهاز الكمبيوتر (Hardware
+                            Change).</li>
+                        <li>الاحتفاظ بحقنا الكامل في الملاحقة القانونية والمطالبة بالتعويضات المادية عن أي أضرار لحقت
+                            بملكيتنا الفكرية.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- الفوتر المختصر -->
+    <footer class="bg-dark-950 border-t border-dark-700 py-8 relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

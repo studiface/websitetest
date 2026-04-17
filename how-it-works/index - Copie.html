@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كيف يعمل | دليل الاستخدام الشامل - StudiFace</title>
+
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        tech: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#050507',
+                            900: '#0A0A0E',
+                            800: '#121218',
+                            700: '#1C1C24',
+                            600: '#2A2A35',
+                        },
+                        brand: {
+                            cyan: '#00E5FF',
+                            blue: '#3B82F6',
+                            green: '#10B981',
+                            red: '#EF4444',
+                            orange: '#F59E0B',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2300E5FF' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 40px -5px rgba(0, 229, 255, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(28, 28, 36, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #00E5FF 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* تصميم مخصص للبطاقات النصية */
+        .feature-card p strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .feature-card:hover .number-badge {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+        }
+
+        .cursor-zoom-in {
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+
+        .cursor-zoom-in:hover {
+            transform: scale(1.02);
+        }
+
+        #modalImg {
+            /* حماية من التمدد الزائد في الشاشات الكبيرة */
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-950 text-gray-300 font-sans antialiased selection:bg-brand-cyan selection:text-dark-950 relative">
+
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+
+    <!-- الشريط العلوي -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="../resources/logo.png" alt="StudiFace" class="h-8 md:h-10 w-auto object-contain relative z-10"
+                    onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
+                <h1 class="text-xl md:text-2xl font-black text-white tracking-wide">
+                    StudiFace <span class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Vision
+                        AI</span>
+                </h1>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html"
+                    class="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> الرئيسية
+                </a>
+                <a href="index.html#download"
+                    class="bg-gradient-to-r from-brand-cyan to-brand-blue text-dark-950 px-4 py-2 rounded-lg font-bold transition-transform hover:scale-105 text-sm">
+                    تحميل البرنامج
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ترويسة الصفحة -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 z-10 text-center border-b border-dark-700">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="text-brand-cyan font-bold tracking-widest text-sm uppercase mb-3 block">User Manual</span>
+            <h1 class="text-4xl lg:text-6xl font-black text-white mb-6">الدليل الشامل للواجهة والأزرار</h1>
+            <p class="text-xl text-gray-400 leading-relaxed">
+                تعرف على كل زر وخاصية في برنامج <strong class="text-white">StudiFace</strong>. مصمم خصيصاً ليكون بسيطاً
+                ومباشراً لتسهيل عمل المصورين داخل الاستوديو.
+            </p>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- القسم 1: التبويبات والمفاهيم الرئيسية -->
+        <section class="py-16 border-b border-dark-800 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- الصورة -->
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl group">
+                        <img src="../resources/H1.png" alt="التبويبات الرئيسية"
+                            class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent flex items-end p-6 pointer-events-none">
+                            <span
+                                class="text-white font-bold text-sm bg-dark-800/80 px-3 py-1 rounded-md backdrop-blur-sm border border-dark-600"><i
+                                    class="fa-solid fa-image text-brand-cyan mr-1"></i> صورة 1: التبويبات
+                                الرئيسية</span>
+                        </div>
+                    </div>
+
+                    <!-- الشروحات -->
+                    <div>
+                        <h2 class="text-3xl font-black text-white mb-8 border-r-4 border-brand-cyan pr-4">1. التبويبات
+                            والمفاهيم الأساسية</h2>
+                        <div class="space-y-4">
+                            <!-- بطاقة 1 -->
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-cyan transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    1</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-2">البحث من قاعدة البيانات</h3>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>الفكرة:</strong> استرجاع الصور الأصلية
+                                        المخزنة مسبقاً في ذاكرة البرنامج بسرعة فائقة.</p>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>العمل:</strong> يفتح واجهة مطابقة
+                                        الوجوه المؤرشفة للوصول للنسخة الرقمية في أجزاء من الثانية.</p>
+                                    <p class="text-sm text-brand-cyan/80 mt-2 bg-brand-cyan/10 p-2 rounded"><i
+                                            class="fa-solid fa-lightbulb"></i> <strong>مثال:</strong> طلب عميل صورة
+                                        التقطها قبل سنة، ترفع صورته ليجد لك الأصلية فوراً.</p>
+                                </div>
+                            </div>
+                            <!-- بطاقة 2 -->
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-cyan transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    2</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-2">البحث الحي المباشر</h3>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>الفكرة:</strong> فحص المجلدات الجديدة
+                                        لحظياً دون انتظار أرشفتها.</p>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>العمل:</strong> يمسح مجلد تختاره على
+                                        القرص ويقارن صوره بالهدف مباشرة.</p>
+                                    <p class="text-sm text-brand-cyan/80 mt-2 bg-brand-cyan/10 p-2 rounded"><i
+                                            class="fa-solid fa-lightbulb"></i> <strong>مثال:</strong> عريس يريد صوره من
+                                        مجلد حفل انتهيت منه للتو ولم تؤرشفه بعد.</p>
+                                </div>
+                            </div>
+                            <!-- بطاقة 3 -->
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-cyan transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    3</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-2">إدارة قاعدة البيانات</h3>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>الفكرة:</strong> تنظيم أرشيف الاستوديو
+                                        وتعليم الذكاء الاصطناعي وجوهاً جديدة.</p>
+                                    <p class="text-sm text-brand-cyan/80 mt-2 bg-brand-cyan/10 p-2 rounded"><i
+                                            class="fa-solid fa-lightbulb"></i> <strong>مثال:</strong> إضافة كافة صور عام
+                                        2025 لذاكرة البرنامج للبحث عنها مستقبلاً.</p>
+                                </div>
+                            </div>
+                            <!-- بطاقة 4 و 5 اختصاراً للسطور -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="feature-card glass-panel p-4 rounded-xl flex gap-3">
+                                    <div
+                                        class="number-badge w-6 h-6 rounded-full bg-brand-cyan text-dark-950 font-bold text-sm flex items-center justify-center shrink-0">
+                                        4</div>
+                                    <div>
+                                        <h3 class="text-white font-bold text-sm">الإعدادات</h3>
+                                        <p class="text-xs text-gray-400 mt-1">تخصيص الخيارات، أعداد النتائج، وتفعيل
+                                            التنبيهات وإدارة الرخصة.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-card glass-panel p-4 rounded-xl flex gap-3">
+                                    <div
+                                        class="number-badge w-6 h-6 rounded-full bg-brand-cyan text-dark-950 font-bold text-sm flex items-center justify-center shrink-0">
+                                        5</div>
+                                    <div>
+                                        <h3 class="text-white font-bold text-sm">مستوى التشابه</h3>
+                                        <p class="text-xs text-gray-400 mt-1">تحديد حساسية المطابقة (مثلاً 70%) لاستبعاد
+                                            الأقارب المتشابهين.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم 2: واجهة البحث في الأرشيف -->
+        <section class="py-16 border-b border-dark-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    <!-- الشروحات (تظهر أولاً في الشاشات الكبيرة لتناوب التصميم) -->
+                    <div class="order-2 lg:order-1">
+                        <h2 class="text-3xl font-black text-white mb-8 border-r-4 border-brand-green pr-4">2. واجهة
+                            البحث في الأرشيف الأساسية</h2>
+                        <div class="space-y-4">
+                            <!-- بطاقات الشرح -->
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-green transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-green text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    1</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-2">رفع صورة الهدف</h3>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>الفكرة والعمل:</strong> تزويد البرنامج
+                                        بصورة الزبون ليقوم بتحليل واستخراج ملامح وجهه.</p>
+                                    <p class="text-sm text-brand-green/80 mt-2 bg-brand-green/10 p-2 rounded"><i
+                                            class="fa-solid fa-lightbulb"></i> <strong>مثال:</strong> اختيار صورة
+                                        "واتساب" باهتة أرسلها زبون لتبحث عن أصلها.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-green transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-green text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    2</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-2">تفعيل البحث بالتاريخ</h3>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>الفكرة:</strong> حصر البحث في فترة
+                                        زمنية لزيادة السرعة وتجاهل السنوات الخاطئة.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-green transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-green text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    3</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-2">محدد النطاق (القائمة المنسدلة)</h3>
+                                    <p class="text-sm text-gray-400 mb-1"><strong>الفكرة:</strong> اختيار طريقة تحديد
+                                        الوقت (نطاق، سنة، شهر) ليغير شكل حقول الإدخال.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div
+                                    class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green transition-all">
+                                    <div
+                                        class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-sm flex items-center justify-center shrink-0">
+                                        4</div>
+                                    <div>
+                                        <h3 class="text-white font-bold text-sm">من / إلى (التواريخ)</h3>
+                                        <p class="text-xs text-gray-400 mt-1">تحديد البداية والنهاية الدقيقة.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green transition-all">
+                                    <div
+                                        class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-sm flex items-center justify-center shrink-0">
+                                        5</div>
+                                    <div>
+                                        <h3 class="text-white font-bold text-sm">بدء البحث في القاعدة</h3>
+                                        <p class="text-xs text-gray-400 mt-1">إطلاق محرك المطابقة الرقمية.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green transition-all sm:col-span-2">
+                                    <div
+                                        class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-sm flex items-center justify-center shrink-0">
+                                        6</div>
+                                    <div>
+                                        <h3 class="text-white font-bold text-sm">عداد الوجوه (تم مسح...)</h3>
+                                        <p class="text-xs text-gray-400 mt-1">يعرض تقدم الفحص اللحظي أثناء مسح البرنامج
+                                            لآلاف الصور في الثانية الواحدة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الصورة -->
+                    <div
+                        class="order-1 lg:order-2 relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl group">
+                        <img src="../resources/H2.png" alt="واجهة البحث"
+                            class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent flex items-end p-6 pointer-events-none">
+                            <span
+                                class="text-white font-bold text-sm bg-dark-800/80 px-3 py-1 rounded-md backdrop-blur-sm border border-dark-600"><i
+                                    class="fa-solid fa-image text-brand-green mr-1"></i> صورة 2: البحث في القاعدة</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم 3: الفلترة الزمنية الذكية -->
+        <section class="py-16 border-b border-dark-800 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl group">
+                        <img src="../resources/H3.png" alt="الفلترة الزمنية"
+                            class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-dark-950/80 to-transparent flex items-end p-6 pointer-events-none">
+                            <span
+                                class="text-white font-bold text-sm bg-dark-800/80 px-3 py-1 rounded-md backdrop-blur-sm border border-dark-600"><i
+                                    class="fa-solid fa-image text-brand-orange mr-1"></i> صورة 3: خيارات التاريخ</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-black text-white mb-8 border-r-4 border-brand-orange pr-4">3. تفاصيل
+                            محدد النطاق الزمني</h2>
+                        <div class="space-y-4">
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-orange transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-orange text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    1</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-1">نطاق محدد</h3>
+                                    <p class="text-sm text-gray-400">الفلترة زمنياً لتشمل الصور التي يقع تاريخ تعديلها
+                                        بين يوم البداية ويوم النهاية. (مثال: عطلة الصيف بين شهر 6 و 8).</p>
+                                </div>
+                            </div>
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-orange transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-orange text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    2</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-1">سنة محددة</h3>
+                                    <p class="text-sm text-gray-400">تضييق النطاق ليشمل عاماً كاملاً بضغطة واحدة (مثال:
+                                        إدخال 2023 للبحث فقط في تلك السنة).</p>
+                                </div>
+                            </div>
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-orange transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-orange text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    3</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-1">شهر محدد</h3>
+                                    <p class="text-sm text-gray-400">يسمح باختيار السنة ورقم الشهر لحصر المطابقة ضمن
+                                        أيامه (مثال: البحث في صور شهر شتنبر الخاص بالدخول المدرسي).</p>
+                                </div>
+                            </div>
+                            <div
+                                class="feature-card glass-panel p-5 rounded-xl border-l-2 border-transparent hover:border-brand-orange transition-all flex gap-4">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-orange text-dark-950 font-black flex items-center justify-center shrink-0 transition-transform">
+                                    4</div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white mb-1">آخر مدة</h3>
+                                    <p class="text-sm text-gray-400">يحسب الفترة رجوعاً من تاريخ اليوم (مثال: صور صورتها
+                                        خلال "آخر 30 يوم").</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم 4 و 5: النتائج والمعاينة (مدمجة لتقليل الطول) -->
+        <section class="py-16 border-b border-dark-800">
+            <div class="max-w-7xl mx-auto px-6 text-center mb-12">
+                <h2 class="text-3xl font-black text-white mb-4">4. التعامل مع النتائج وشاشة المعاينة</h2>
+                <p class="text-gray-400">كل ما تحتاجه بعد عثور الذكاء الاصطناعي على صور العميل.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- عمود النتائج -->
+                <div>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl mb-6">
+                        <img src="../resources/H4.png" alt="نتائج البحث" class="w-full h-auto object-cover opacity-80">
+                    </div>
+                    <div class="space-y-3">
+                        <div
+                            class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-purple transition-all">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                1</div>
+                            <div><strong class="text-white text-sm">تصدير كل الصور:</strong> <span
+                                    class="text-gray-400 text-xs">نسخ كافة النتائج لمجلد واحد بضغطة زر.</span></div>
+                        </div>
+                        <div
+                            class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-purple transition-all">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                2</div>
+                            <div><strong class="text-white text-sm">ترتيب النتائج:</strong> <span
+                                    class="text-gray-400 text-xs">فرز حسب نسبة التطابق أو تاريخ التعديل.</span></div>
+                        </div>
+                        <div
+                            class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-purple transition-all">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                3</div>
+                            <div><strong class="text-white text-sm">تصدير (لصورة واحدة):</strong> <span
+                                    class="text-gray-400 text-xs">حفظ نسخة من نتيجة محددة لسطح المكتب مثلاً.</span>
+                            </div>
+                        </div>
+                        <div
+                            class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-purple transition-all">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                4</div>
+                            <div><strong class="text-white text-sm">مسار:</strong> <span
+                                    class="text-gray-400 text-xs">فتح مجلد الويندوز وتحديد الصورة داخله تلقائياً.</span>
+                            </div>
+                        </div>
+                        <div
+                            class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-purple transition-all">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                5</div>
+                            <div><strong class="text-white text-sm">نسبة التطابق:</strong> <span
+                                    class="text-gray-400 text-xs">شريط ملون يوضح مدى دقة وثقة المحرك في النتيجة.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- عمود المعاينة -->
+                <div>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl mb-6">
+                        <img src="../resources/H5.png" alt="عارض الصور" class="w-full h-auto object-cover opacity-80">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                1</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">تكبير (+):</strong> فحص تفاصيل
+                                الملامح.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                2</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">تصغير (-):</strong> رؤية أبعاد
+                                الصورة الكلية.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                3</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">إعادة:</strong> الحجم
+                                الافتراضي 100%.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                4</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">موقع الملف:</strong> الانتقال
+                                لمجلد الصورة.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                5</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">تصدير:</strong> حفظ نسخة في
+                                مكان جديد.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                6</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">طباعة:</strong> إرسال للطابعة
+                                فوراً.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                7</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">إغلاق:</strong> العودة
+                                للنتائج.</div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-2 hover:border-brand-red">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-red text-white font-bold text-xs flex shrink-0 justify-center items-center">
+                                8</div>
+                            <div class="text-xs text-gray-400"><strong class="text-white">التفاصيل:</strong> عرض تاريخ
+                                الالتقاط والأبعاد.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم 6: البحث الحي والمباشر -->
+        <section class="py-16 border-b border-dark-800 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    <div class="order-2 lg:order-1">
+                        <h2 class="text-3xl font-black text-white mb-8 border-r-4 border-brand-cyan pr-4">5. واجهة البحث
+                            الحي (مجلدات غير مؤرشفة)</h2>
+                        <div class="space-y-4">
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-cyan">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                    1</div>
+                                <div><strong class="text-white text-sm block mb-1">رفع صورة الهدف</strong> <span
+                                        class="text-gray-400 text-xs">تزويد البرنامج بصورة الشخص المراد البحث
+                                        عنه.</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-cyan">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                    2</div>
+                                <div><strong class="text-white text-sm block mb-1">تحديد مجلد البحث</strong> <span
+                                        class="text-gray-400 text-xs">المسار المباشر للمجلد الذي سيتم فحصه الآن (مثل:
+                                        مجلد حفل زفاف جديد).</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-cyan">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                    3</div>
+                                <div><strong class="text-white text-sm block mb-1">تفعيل البحث بالتاريخ</strong> <span
+                                        class="text-gray-400 text-xs">تجاهل الصور خارج الفترة المحددة لتسريع الفحص
+                                        المباشر.</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-cyan">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                    4</div>
+                                <div><strong class="text-white text-sm block mb-1">تصدير الوجوه للنموذج الحالي</strong>
+                                    <span class="text-gray-400 text-xs">حفظ بصمات الوجوه المكتشفة في الذاكرة أثناء الفحص
+                                        الحي للاستفادة منها مستقبلاً.</span>
+                                </div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-cyan">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                    5</div>
+                                <div><strong class="text-white text-sm block mb-1">بدء الفحص الحي</strong> <span
+                                        class="text-gray-400 text-xs">قراءة الصور ومطابقتها فوراً بدون فهرسة
+                                        مسبقة.</span></div>
+                            </div>
+                            <div
+                                class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-cyan bg-brand-cyan/5">
+                                <div
+                                    class="number-badge w-8 h-8 rounded-full bg-brand-cyan text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                    <i class="fa-solid fa-hand-pointer"></i>
+                                </div>
+                                <div><strong class="text-white text-sm block mb-1">السحب والإفلات (Drag & Drop)</strong>
+                                    <span class="text-gray-400 text-xs">اسحب مجلد الصور أو صورة الهدف داخل الواجهة
+                                        مباشرة ليتم تعيينها تلقائياً.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="order-1 lg:order-2 relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl group">
+                        <img src="../resources/H6.png" alt="البحث الحي"
+                            class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم 7: إدارة نماذج قواعد البيانات -->
+        <section class="py-16 border-b border-dark-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl group">
+                        <img src="../resources/H7.png" alt="إدارة قواعد البيانات"
+                            class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl font-black text-white mb-8 border-r-4 border-brand-green pr-4">6. إدارة
+                            الأرشيف (النماذج)</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    1</div>
+                                <div><strong class="text-white text-sm">اسم النموذج:</strong> <span
+                                        class="text-gray-400 text-xs block">تسمية قاعدة بيانات جديدة (مثال: أرشيف
+                                        2024).</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    2</div>
+                                <div><strong class="text-white text-sm">إنشاء وبدء:</strong> <span
+                                        class="text-gray-400 text-xs block">تأسيس النموذج وتنشيطه لاستقبال الصور.</span>
+                                </div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    3</div>
+                                <div><strong class="text-white text-sm">تحميل:</strong> <span
+                                        class="text-gray-400 text-xs block">رفع بيانات نموذج محفوظ للذاكرة للبحث
+                                        فيه.</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    4</div>
+                                <div><strong class="text-white text-sm">تكرار:</strong> <span
+                                        class="text-gray-400 text-xs block">نسخ النموذج كنسخة احتياطية قبل
+                                        التعديل.</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    5</div>
+                                <div><strong class="text-white text-sm">تصدير (ZIP):</strong> <span
+                                        class="text-gray-400 text-xs block">ضغط الأرشيف لنقله لجهاز آخر.</span></div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    6</div>
+                                <div><strong class="text-white text-sm">حذف:</strong> <span
+                                        class="text-gray-400 text-xs block">إزالة النماذج القديمة لتوفير المساحة.</span>
+                                </div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    7</div>
+                                <div><strong class="text-white text-sm">استيراد:</strong> <span
+                                        class="text-gray-400 text-xs block">إضافة أرشيف خارجي أرسله لك صديق.</span>
+                                </div>
+                            </div>
+                            <div class="feature-card glass-panel p-4 rounded-xl flex gap-3 hover:border-brand-green">
+                                <div
+                                    class="number-badge w-6 h-6 rounded-full bg-brand-green text-dark-950 font-bold text-xs flex shrink-0 justify-center items-center">
+                                    8</div>
+                                <div><strong class="text-white text-sm">دمج عدة نماذج:</strong> <span
+                                        class="text-gray-400 text-xs block">توحيد أرشيفات متفرقة في قاعدة شاملة
+                                        واحدة.</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم 8 و 9: التعليم والإعدادات -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- التعليم -->
+                <div>
+                    <h2 class="text-2xl font-black text-white mb-6 border-r-4 border-brand-orange pr-4">7. استيعاب
+                        الأرشيف (التعلم)</h2>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl mb-6">
+                        <img src="../resources/H8.png" alt="تعليم الذكاء الاصطناعي"
+                            class="w-full h-auto object-cover opacity-80">
+                    </div>
+                    <div class="space-y-3">
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-orange">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-orange text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                1</div>
+                            <div><strong class="text-white text-sm">تحديد مجلد التعلم:</strong> <span
+                                    class="text-gray-400 text-xs">توجيه البرنامج لمكان صورك لتهيئتها.</span></div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-orange">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-orange text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                2</div>
+                            <div><strong class="text-white text-sm">بدء الاستيعاب:</strong> <span
+                                    class="text-gray-400 text-xs">استخراج بصمات الوجوه وحفظها.</span></div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-orange">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-orange text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                3</div>
+                            <div><strong class="text-white text-sm">فحص حالة القاعدة:</strong> <span
+                                    class="text-gray-400 text-xs">التأكد من سلامة روابط الصور المفقودة.</span></div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-orange">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-orange text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                4</div>
+                            <div><strong class="text-white text-sm">العداد الرقمي:</strong> <span
+                                    class="text-gray-400 text-xs">إجمالي الوجوه المخزنة في النموذج النشط.</span></div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-orange">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-orange text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                5</div>
+                            <div><strong class="text-white text-sm">مدير المسارات:</strong> <span
+                                    class="text-gray-400 text-xs">إصلاح الروابط فوراً عند نقل الأرشيف لهاردسك
+                                    جديد.</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الإعدادات -->
+                <div>
+                    <h2 class="text-2xl font-black text-white mb-6 border-r-4 border-brand-purple pr-4">8. الإعدادات
+                        والتحكم</h2>
+                    <div class="relative w-full rounded-2xl overflow-hidden border border-dark-600 shadow-xl mb-6">
+                        <img src="../resources/H9.png" alt="الإعدادات" class="w-full h-auto object-cover opacity-80">
+                    </div>
+                    <div class="space-y-3">
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-purple">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                1</div>
+                            <div><strong class="text-white text-sm">أقصى عدد للصور:</strong> <span
+                                    class="text-gray-400 text-xs">تحديد سعة عرض النتائج (مثال: أفضل 25 لقطة).</span>
+                            </div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-purple">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                2</div>
+                            <div><strong class="text-white text-sm">الصيغ المدعومة:</strong> <span
+                                    class="text-gray-400 text-xs">فلترة الملفات (مثل تفعيل JPG فقط).</span></div>
+                        </div>
+                        <div class="feature-card glass-panel p-3 rounded-xl flex gap-3 hover:border-brand-purple">
+                            <div
+                                class="number-badge w-6 h-6 rounded-full bg-brand-purple text-dark-950 font-bold flex shrink-0 justify-center items-center">
+                                3</div>
+                            <div><strong class="text-white text-sm">التنبيه الصوتي:</strong> <span
+                                    class="text-gray-400 text-xs">صوت عند إيجاد تطابق لتتمكن من العمل بعيداً عن
+                                    الشاشة.</span></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-2">
+                            <div class="feature-card glass-panel p-2 rounded-xl text-center hover:border-brand-purple">
+                                <span class="text-brand-purple text-xs font-bold block mb-1">4. الرخصة</span>
+                                <span class="text-gray-400 text-[10px]">تجديد وتفعيل PRO</span>
+                            </div>
+                            <div class="feature-card glass-panel p-2 rounded-xl text-center hover:border-brand-purple">
+                                <span class="text-brand-purple text-xs font-bold block mb-1">5. إلغاء</span>
+                                <span class="text-gray-400 text-[10px]">مسح الترخيص لنقله</span>
+                            </div>
+                            <div class="feature-card glass-panel p-2 rounded-xl text-center hover:border-brand-purple">
+                                <span class="text-brand-purple text-xs font-bold block mb-1">6. تحديثات</span>
+                                <span class="text-gray-400 text-[10px]">تحميل أحدث نسخة</span>
+                            </div>
+                            <div class="feature-card glass-panel p-2 rounded-xl text-center hover:border-brand-purple">
+                                <span class="text-brand-purple text-xs font-bold block mb-1">7. روابط</span>
+                                <span class="text-gray-400 text-[10px]">الدعم والموقع</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- دعوة للتحميل -->
+        <section class="py-20 text-center relative z-10">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-3xl font-black text-white mb-6">أصبح البرنامج واضحاً الآن؟</h2>
+                <p class="text-xl text-gray-400 mb-10">استمتع بتجربة أذكى أداة صُممت خصيصاً لتوفير وقتك في الاستوديو
+                    وزيادة مبيعاتك من الصور القديمة.</p>
+                <a href="index.html#download"
+                    class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-cyan to-brand-blue hover:from-brand-blue hover:to-brand-cyan text-dark-950 px-10 py-5 rounded-2xl font-black text-xl transition-all duration-300 transform hover:-translate-y-1 shadow-neon-cyan">
+                    <i class="fa-solid fa-download"></i> حمل البرنامج وجربه الآن
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- الفوتر المختصر -->
+    <footer class="bg-dark-950 border-t border-dark-700 py-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+        </div>
+    </footer>
+
+
+    <!-- نافذة تكبير الصور (Lightbox Modal) -->
+    <div id="imageModal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/90 backdrop-blur-md cursor-zoom-out transition-all duration-300 opacity-0">
+        <!-- زر الإغلاق -->
+        <button class="absolute top-5 left-5 text-white/50 hover:text-brand-cyan text-4xl transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- حاوية الصورة -->
+        <div class="relative max-w-[90%] max-h-[90vh]">
+            <img id="modalImg" src="" alt="صورة مكبرة"
+                class="rounded-xl shadow-neon-cyan border border-white/10 object-contain max-h-[85vh]">
+            <p id="modalCaption" class="text-center text-white mt-4 font-bold text-lg"></p>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalCaption = document.getElementById('modalCaption');
+
+        // الحصول على جميع الصور التي نريد جعلها قابلة للتكبير
+        // قمت بإضافة كلاس "cursor-zoom-in" لها برمجياً
+        document.querySelectorAll('img').forEach(img => {
+            // نتجنب شعار الموقع أو الصور الصغيرة جداً إذا أردت
+            if (!img.classList.contains('no-zoom')) {
+                img.classList.add('cursor-zoom-in');
+                img.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                    // تأثير ظهور ناعم
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                    }, 10);
+
+                    modalImg.src = img.src;
+                    // جلب نص التوضيح من الـ alt الخاص بالصورة
+                    modalCaption.textContent = img.alt || "معاينة الواجهة";
+                });
+            }
+        });
+
+        // إغلاق النافذة عند النقر في أي مكان (الخلفية)
+        modal.addEventListener('click', () => {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        });
+
+        // إغلاق عند الضغط على زر Esc من لوحة المفاتيح
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") modal.click();
+        });
+    </script>
+</body>
+
+</html>
