@@ -91,8 +91,9 @@
     <!-- الشريط العلوي -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
-                <img src="/websitetest/resources/logo.png" alt="StudiFace" class="h-8 md:h-10 w-auto object-contain relative z-10"
+            <a href="/websitetest/" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="/websitetest/resources/logo.png" alt="StudiFace"
+                    class="h-8 md:h-10 w-auto object-contain relative z-10"
                     onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
                 <h1 class="text-xl md:text-2xl font-black text-white tracking-wide">
                     StudiFace <span class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Vision
@@ -100,7 +101,7 @@
                 </h1>
             </a>
             <div class="flex items-center gap-6">
-                <a href="index.html"
+                <a href="/websitetest/"
                     class="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2">
                     <i class="fa-solid fa-house"></i> العودة للرئيسية
                 </a>
@@ -131,10 +132,9 @@
                 <!-- الشعار المتحرك والإصدار -->
                 <div class="flex flex-col items-center justify-center mb-8">
                     <!-- حاوية الشعار المتحرك -->
-                    <div
-                        class="w-24 h-24 bg-dark-950 border border-dark-600 rounded-2xl flex items-center justify-center mb-4 shadow-2xl overflow-hidden p-2 group-hover:border-brand-cyan/50 transition-colors">
+                    <div class="w-24 h-24 flex items-center justify-center mb-4 transition-transform hover:scale-110">
                         <img src="/websitetest/resources/logo.png" alt="StudiFace Animation"
-                            class="w-full h-full object-contain drop-shadow-[0_0_10px_rgba(0,229,255,0.3)]"
+                            class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(0,229,255,0.5)]"
                             onerror="this.src='https://placehold.co/80x80/0A0A0E/00E5FF?text=AI'">
                     </div>
 
@@ -177,7 +177,7 @@
 
                 <!-- زر التحميل -->
                 <!-- ملاحظة: ضع رابط التحميل الفعلي بدلاً من "#" في href -->
-                <a href="#" download
+                <a href="https://github.com/studiface/website/releases/download/exe/StudiFace_Setup.exe" download
                     class="group relative inline-flex items-center justify-center w-full md:w-auto px-12 py-5 font-black text-xl text-dark-950 bg-gradient-to-r from-brand-cyan to-brand-blue rounded-2xl overflow-hidden transition-all hover:scale-105 shadow-[0_0_30px_rgba(0,229,255,0.3)]">
                     <span
                         class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-full group-hover:h-56 opacity-10"></span>
@@ -249,7 +249,7 @@
                     <i class="fa-solid fa-arrow-down text-dark-600 md:hidden"></i>
 
                     <!-- الخطوة 3 (رابط تفاعلي لصفحة كيف يعمل) -->
-                    <a href="how-it-works.html"
+                    <<a href="/websitetest/how-it-works/"
                         class="flex items-center gap-3 group/step transition-all hover:translate-x-[-5px]">
                         <div
                             class="w-8 h-8 rounded-full bg-brand-cyan text-dark-950 shadow-neon-cyan flex items-center justify-center font-bold group-hover/step:scale-110 transition-transform">
@@ -261,19 +261,127 @@
                                 شاهد شرح الواجهة <i class="fa-solid fa-arrow-left text-[8px]"></i>
                             </span>
                         </div>
-                    </a>
+                        </a>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- الفوتر المختصر -->
-    <footer class="bg-dark-950 border-t border-dark-700 py-6 relative z-10 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
-            <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+    <!-- 7. الختام والفوتر (Footer) -->
+    <footer class="bg-dark-950 border-t border-dark-700 pt-20 pb-10 relative z-10 overflow-hidden">
+        <!-- عناصر ديكورية -->
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- تقسيم الفوتر -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-12">
+
+                <!-- عمود الشعار -->
+                <div class="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-right">
+
+                    <!-- الشعار (تم توسيطه في الهاتف md:justify-start) -->
+                    <div class="flex items-center justify-center md:justify-start gap-4 mb-6 w-full">
+                        <img src="/websitetest/resources/logo.png" alt="StudiFace Logo"
+                            class="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-500"
+                            onerror="this.style.display='none'">
+                        <h2 class="text-3xl font-black text-white tracking-wide">
+                            StudiFace <span class="text-brand-cyan text-lg font-medium">Vision AI</span>
+                        </h2>
+                    </div>
+
+                    <!-- النص (يتوسط تلقائياً بسبب text-center للأب في الهاتف) -->
+                    <p class="text-gray-400 mb-6 leading-relaxed max-w-sm">
+                        صُنع بحب وإتقان لتسهيل حياة المصورين واستوديوهات الإنتاج الفني. نؤمن بأن الذكاء الاصطناعي وجد
+                        لخدمة إبداعك، وليس العكس.
+                    </p>
+
+                    <!-- السوشيال ميديا (تم توسيطها في الهاتف md:justify-start) -->
+                    <div class="flex justify-center md:justify-start gap-4 w-full">
+                        <!-- أضفنا target="_blank" و rel="noopener noreferrer" -->
+                        <a href="https://web.facebook.com/StudiFaceAi/" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full bg-dark-800 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-blue hover:border-brand-blue transition-all duration-300">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/StudiFaceAi/" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full bg-dark-800 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 hover:border-pink-600 transition-all duration-300">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@StudiFace" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full bg-dark-800 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-red hover:border-brand-red transition-all duration-300">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/212695106101" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-full bg-dark-800 border border-dark-600 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-green hover:border-brand-green transition-all duration-300">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- روابط سريعة (مُحدثة لترتبط بالصفحات الجديدة) -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-bold text-lg mb-6 border-b border-dark-700 pb-2 inline-block">روابط سريعة
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <<a href="/websitetest/how-it-works/"
+                                class="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-left text-xs"></i> دليل استخدام البرنامج</a>
+                        </li>
+                        <li><a href="/websitetest/faq/"
+                                class="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-angle-left text-xs"></i> الأسئلة الشائعة (FAQ)</a></li>
+                        <li><a href="/websitetest/contact/"
+                                class="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-left text-xs"></i> تفعيل النسخة PRO</a></li>
+                        <li><a href="/websitetest/legal/"
+                                class="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2"><i
+                                    class="fa-solid fa-angle-left text-xs"></i> المركز القانوني والخصوصية</a></li>
+                    </ul>
+                </div>
+
+                <!-- تواصل معنا للدعم (مُحدثة لترتبط بصفحة اتصل بنا) -->
+                <div class="md:col-span-4">
+                    <h4 class="text-white font-bold text-lg mb-6 border-b border-dark-700 pb-2 inline-block">الدعم
+                        والمساعدة</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-dark-800 p-2 rounded-lg text-brand-cyan border border-dark-600"><i
+                                    class="fa-solid fa-headset"></i></div>
+                            <div>
+                                <span class="block text-sm text-gray-500">تحتاج مساعدة؟</span>
+                                <a href="/websitetest/contact/" class="text-white hover:text-brand-cyan font-bold">انتقل
+                                    لمركز
+                                    الدعم الفني</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-dark-800 p-2 rounded-lg text-brand-green border border-dark-600"><i
+                                    class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <span class="block text-sm text-gray-500">مبيعات وتفعيل (واتساب)</span>
+                                <a href="https://wa.me/212695106101"
+                                    class="text-white hover:text-brand-green font-tech dir-ltr inline-block">212695106101</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <!-- حقوق النشر -->
+            <div
+                class="border-t border-dark-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+                <p>جميع الحقوق محفوظة &copy; 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+                <div class="flex items-center gap-2">
+                    <span>صُنع بعقول عربية</span> <i class="fa-solid fa-heart text-brand-red animate-pulse"></i>
+                </div>
+            </div>
+
         </div>
     </footer>
+
 
 </body>
 
