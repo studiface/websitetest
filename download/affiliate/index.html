@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <!-- الأساسيات (Basic SEO) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج شركاء StudiFace | اربح 20% عمولة على كل مبيعة</title>
+    <meta name="description"
+        content="انضم إلى برنامج التسويق بالعمولة لبرنامج StudiFace. شارك البرنامج مع زملائك المصورين واربح عمولات مالية مجزية (حتى 160 درهم) على كل عملية بيع ناجحة.">
+    <meta name="robots" content="noindex, nofollow"> <!-- مخفية عن محركات البحث حالياً كما طلبت -->
+
+    <!-- خطوط جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        tech: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            950: '#050507',
+                            900: '#0A0A0E',
+                            800: '#121218',
+                            700: '#1C1C24',
+                        },
+                        brand: {
+                            cyan: '#00E5FF',
+                            blue: '#3B82F6',
+                            green: '#10B981',
+                            red: '#EF4444',
+                            orange: '#F59E0B',
+                            purple: '#8B5CF6'
+                        }
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2300E5FF' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                        'radial-glow': 'radial-gradient(circle at 50% 20%, rgba(0, 229, 255, 0.15) 0%, transparent 60%)',
+                    },
+                    boxShadow: {
+                        'neon-cyan': '0 0 40px -5px rgba(0, 229, 255, 0.3)',
+                        'neon-green': '0 0 40px -5px rgba(16, 185, 129, 0.3)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(28, 28, 36, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 14, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #00E5FF 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* تصميم الأكورديون للأسئلة الشائعة */
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary i {
+            transform: rotate(180deg);
+            color: #00E5FF;
+        }
+    </style>
+</head>
+
+<body class="bg-dark-950 text-gray-300 font-sans antialiased relative min-h-screen flex flex-col">
+
+    <!-- خلفية وتأثيرات -->
+    <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+    <div class="fixed top-0 inset-x-0 h-screen bg-radial-glow pointer-events-none z-0"></div>
+
+    <!-- الشريط العلوي -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-4 group cursor-pointer">
+                <img src="resources/logo.png" alt="شعار برنامج StudiFace"
+                    class="h-8 md:h-10 w-auto object-contain relative z-10"
+                    onerror="this.src='https://placehold.co/40x40/1C1C24/00E5FF?text=S'">
+                <h1 class="text-xl md:text-2xl font-black text-white tracking-wide whitespace-nowrap">
+                    StudiFace <span
+                        class="text-brand-cyan text-sm md:text-lg font-medium hidden sm:inline">Partners</span>
+                </h1>
+            </a>
+            <div class="flex items-center gap-6">
+                <a href="index.html"
+                    class="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> العودة للموقع
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow relative z-10">
+
+        <!-- 1. الهيرو سيكشن (Hero Section) -->
+        <header class="pt-40 pb-20 lg:pt-48 lg:pb-24 px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div
+                    class="inline-flex items-center gap-2 bg-brand-cyan/10 border border-brand-cyan/30 text-brand-cyan px-5 py-2 rounded-full font-bold text-sm mb-8 shadow-neon-cyan animate-pulse">
+                    <i class="fa-solid fa-handshake"></i> برنامج التسويق بالعمولة (Affiliate)
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                    ضاعف أرباحك بطريقة أخرى.. <br>
+                    <span class="text-gradient-cyan">اربح 20% على كل مبيعة!</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    انضم إلى شبكة سفراء "ستودي فيس". شارك البرنامج الذي يحل أكبر مشكلة تواجه المصورين، واحصل على عمولات
+                    مجزية وفورية عن كل استوديو ينضم عن طريقك.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                    <a href="#apply"
+                        class="w-full sm:w-auto bg-gradient-to-r from-brand-cyan to-brand-blue text-dark-950 px-10 py-4 rounded-xl font-black text-lg transition-transform hover:scale-105 shadow-neon-cyan">
+                        سجل الآن وابدأ الأرباح
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. كيف يعمل؟ (3 Steps) -->
+        <section class="py-20 border-t border-dark-800 bg-dark-900/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black text-white mb-4">كيف تجني الأرباح؟</h2>
+                    <p class="text-gray-400">طريقك لتحقيق الدخل الإضافي بسيط جداً</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- الخطوة 1 -->
+                    <div
+                        class="glass-panel p-8 rounded-3xl text-center relative border border-dark-600 hover:border-brand-cyan/50 transition-colors group">
+                        <div
+                            class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-dark-900 border-2 border-brand-cyan text-brand-cyan font-tech font-bold flex items-center justify-center text-xl shadow-neon-cyan">
+                            1</div>
+                        <div
+                            class="w-20 h-20 mx-auto bg-brand-cyan/10 rounded-2xl flex items-center justify-center text-3xl text-brand-cyan mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">سجل مجاناً</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">انضم لبرنامج الشركاء واحصل على رابط التتبع
+                            الخاص بك (أو كود الخصم) فوراً للبدء.</p>
+                    </div>
+
+                    <!-- الخطوة 2 -->
+                    <div
+                        class="glass-panel p-8 rounded-3xl text-center relative border border-dark-600 hover:border-brand-blue/50 transition-colors group">
+                        <div
+                            class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-dark-900 border-2 border-brand-blue text-brand-blue font-tech font-bold flex items-center justify-center text-xl shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                            2</div>
+                        <div
+                            class="w-20 h-20 mx-auto bg-brand-blue/10 rounded-2xl flex items-center justify-center text-3xl text-brand-blue mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">شارك مع زملائك</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">انشر رابطك في مجموعات المصورين، على يوتيوب، أو
+                            أرسله مباشرة لأصحاب الاستوديوهات.</p>
+                    </div>
+
+                    <!-- الخطوة 3 -->
+                    <div
+                        class="glass-panel p-8 rounded-3xl text-center relative border border-dark-600 hover:border-brand-green/50 transition-colors group">
+                        <div
+                            class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-dark-900 border-2 border-brand-green text-brand-green font-tech font-bold flex items-center justify-center text-xl shadow-neon-green">
+                            3</div>
+                        <div
+                            class="w-20 h-20 mx-auto bg-brand-green/10 rounded-2xl flex items-center justify-center text-3xl text-brand-green mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">اربح عمولتك</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">احصل على عمولتك الصافية عن كل مصور يشتري النسخة
+                            الاحترافية عن طريقك.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. حاسبة الأرباح (Profit Calculator Concept) -->
+        <section class="py-20 border-t border-dark-800">
+            <div class="max-w-5xl mx-auto px-6">
+                <div
+                    class="glass-panel p-10 lg:p-14 rounded-[2.5rem] border-2 border-brand-green/20 relative overflow-hidden flex flex-col md:flex-row items-center gap-10">
+                    <div
+                        class="absolute -right-20 -top-20 w-64 h-64 bg-brand-green/10 blur-[100px] rounded-full pointer-events-none">
+                    </div>
+
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-black text-white mb-4">أرباح ممتازة.. <span
+                                class="text-brand-green">وشفافة</span></h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed">لأننا نبيع منتجاً رقمياً (Software) يحل مشكلة
+                            حقيقية، فنسبة التحويل لدينا عالية جداً. نحن نكافئ سفراءنا بسخاء لأنهم شركاء النجاح.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-white"><i
+                                    class="fa-solid fa-check text-brand-green"></i> عمولة ثابتة <strong>20%</strong> على
+                                المبيعات.</li>
+                            <li class="flex items-center gap-3 text-white"><i
+                                    class="fa-solid fa-check text-brand-green"></i> مدفوعات شهرية سريعة.</li>
+                            <li class="flex items-center gap-3 text-white"><i
+                                    class="fa-solid fa-check text-brand-green"></i> لوحة تحكم لتتبع نقراتك ومبيعاتك.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="md:w-1/2 w-full">
+                        <div class="bg-dark-900 border border-dark-700 rounded-2xl p-6 text-center relative shadow-xl">
+                            <div class="text-sm text-gray-400 mb-2">مثال: إذا سوقت للرخصة الدائمة (800 درهم)</div>
+                            <div class="text-gray-500 mb-4 font-tech text-sm">800 × 20% =</div>
+                            <div class="text-5xl font-tech font-bold text-brand-green mb-2 animate-pulse">160 <span
+                                    class="text-xl font-sans text-gray-400">درهم</span></div>
+                            <div
+                                class="text-sm font-bold text-white bg-dark-800 py-2 rounded-lg border border-dark-600 mt-4">
+                                أرباحك الصافية عن كل عملية بيع واحدة!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. الأسئلة الشائعة للمسوقين -->
+        <section class="py-20 border-t border-dark-800 bg-dark-900/50">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black text-white mb-4">أسئلة تهم المسوقين</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="glass-panel rounded-2xl border border-dark-600 group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
+                            هل أحتاج لشراء البرنامج لأسوق له؟
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-400 text-sm border-t border-dark-700 pt-4">
+                            لا، التسجيل في برنامج الشركاء مجاني تماماً ولا يشترط امتلاكك للنسخة الاحترافية. يمكنك
+                            استخدام النسخة المجانية لفهم البرنامج ثم التسويق له لزملائك.
+                        </div>
+                    </details>
+
+                    <details class="glass-panel rounded-2xl border border-dark-600 group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
+                            متى وكيف يتم دفع الأرباح؟
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-400 text-sm border-t border-dark-700 pt-4">
+                            يتم احتساب الأرباح ودفعها شهرياً بمجرد وصول رصيدك للحد الأدنى (مثلاً 500 درهم). الدفع يتم
+                            عبر تحويل بنكي محلي، أو عبر وكالات تحويل الأموال (مثل كاش بلوس/وفاكاش) لتسهيل استلام أرباحك.
+                        </div>
+                    </details>
+
+                    <details class="glass-panel rounded-2xl border border-dark-600 group">
+                        <summary class="flex justify-between items-center p-6 cursor-pointer font-bold text-white">
+                            كيف أعرف أن المشتري جاء عن طريقي؟
+                            <i class="fa-solid fa-chevron-down text-gray-500 transition-transform"></i>
+                        </summary>
+                        <div class="px-6 pb-6 text-gray-400 text-sm border-t border-dark-700 pt-4">
+                            بمجرد قبول انضمامك، ستحصل على (رابط إحالة خاص بك) ولوحة تحكم (Dashboard). أي شخص يضغط على
+                            الرابط ويقوم بشراء التفعيل، سيسجل النظام المبيعة في حسابك تلقائياً وبشفافية تامة.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. نموذج الانضمام (Application Form Placeholder) -->
+        <section id="apply" class="py-24 relative">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <i class="fa-solid fa-envelope-open-text text-5xl text-brand-cyan mb-6"></i>
+                <h2 class="text-3xl font-black text-white mb-4">هل أنت مستعد للبدء؟</h2>
+                <p class="text-gray-400 mb-10">البرنامج حالياً في مرحلة <strong>الإطلاق المغلق (Beta)</strong> للشركاء
+                    المميزين. تواصل معنا عبر الواتساب لتكون من أوائل المسوقين المعتمدين لبرنامج StudiFace.</p>
+
+                <a href="https://wa.me/212695106101?text=مرحباً، أود الانضمام لبرنامج التسويق بالعمولة الخاص بـ StudiFace"
+                    target="_blank"
+                    class="inline-flex items-center gap-3 bg-brand-green text-dark-950 px-10 py-4 rounded-xl font-bold transition-transform hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> تواصل معنا لتفعيل حساب المسوق الخاص بك
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- الفوتر المختصر -->
+    <footer class="bg-dark-950 border-t border-dark-700 py-8 relative z-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>جميع الحقوق محفوظة &copy; 2024 - 2026 لبرنامج <strong class="text-gray-300">StudiFace</strong></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
